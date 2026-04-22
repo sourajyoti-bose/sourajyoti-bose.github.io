@@ -1,0 +1,91 @@
+---
+layout: default
+title: Contact
+description: Initialize contact protocol.
+permalink: /contact/
+---
+
+<div class="page">
+  <div class="page__inner">
+    <div class="page__header">
+      <h1 class="section-label">Initialize_Contact</h1>
+      <p style="max-width: 480px;">
+        For research collaboration, security consulting, or infrastructure architecture inquiries. All transmissions are encrypted.
+      </p>
+    </div>
+
+    <form
+      class="contact-form"
+      action="https://formspree.io/f/YOUR_FORM_ID"
+      method="POST"
+    >
+      <div class="contact-form__group">
+        <label class="contact-form__label" for="name">Identifier</label>
+        <input
+          class="contact-form__input"
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your name or handle"
+          required
+        >
+      </div>
+
+      <div class="contact-form__group">
+        <label class="contact-form__label" for="email">Return Address</label>
+        <input
+          class="contact-form__input"
+          type="email"
+          id="email"
+          name="email"
+          placeholder="your@address.tld"
+          required
+        >
+      </div>
+
+      <div class="contact-form__group">
+        <label class="contact-form__label" for="subject">Protocol</label>
+        <input
+          class="contact-form__input"
+          type="text"
+          id="subject"
+          name="subject"
+          placeholder="Research / Consulting / Other"
+        >
+      </div>
+
+      <div class="contact-form__group">
+        <label class="contact-form__label" for="message">Payload</label>
+        <textarea
+          class="contact-form__textarea"
+          id="message"
+          name="message"
+          placeholder="Describe your inquiry..."
+          required
+        ></textarea>
+      </div>
+
+      <div>
+        <button type="submit" class="btn btn--primary">
+          Transmit Message →
+        </button>
+      </div>
+    </form>
+
+    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(196,198,204,0.2);">
+      <p class="mono" style="margin-bottom: 0.5rem;">// DIRECT_CHANNELS</p>
+      {% if site.author.email %}
+        <p style="font-size: 0.875rem; margin-bottom: 0.25rem;">
+          <span class="mono">EMAIL</span> &nbsp;
+          <a href="mailto:{{ site.author.email }}" style="color: #4a6fa5;">{{ site.author.email }}</a>
+        </p>
+      {% endif %}
+      {% if site.author.github %}
+        <p style="font-size: 0.875rem;">
+          <span class="mono">GITHUB</span> &nbsp;
+          <a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener" style="color: #4a6fa5;">github.com/{{ site.author.github }}</a>
+        </p>
+      {% endif %}
+    </div>
+  </div>
+</div>

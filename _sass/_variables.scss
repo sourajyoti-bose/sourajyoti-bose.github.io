@@ -1,0 +1,77 @@
+// ============================================================
+// ALGORITHMIC MONOLITH — Design Tokens
+// ============================================================
+
+// Color System
+$primary:                  #000000;
+$primary-container:        #101b30;
+$on-primary:               #ffffff;
+
+$secondary:                #4a6fa5;
+$secondary-container:      #c2dcff;
+$on-secondary:             #ffffff;
+
+$surface:                  #f7f9fc;
+$surface-container-lowest: #ffffff;
+$surface-container-low:    #f2f4f7;
+$surface-container:        #eceef1;
+$surface-container-high:   #e5e8ec;
+$surface-container-highest:#dde0e5;
+$surface-variant:          #e0e3e6;
+$surface-tint:             #545e76;
+
+$on-surface:               #191c1e;
+$on-surface-variant:       #44474c;
+$outline:                  #74777d;
+$outline-variant:          #c4c6cc;
+
+$inverse-surface:          #2d3133;
+$inverse-on-surface:       #eff1f4;
+
+$error:                    #ba1a1a;
+
+// Typography
+$font-display:  'Space Grotesk', sans-serif;
+$font-body:     'IBM Plex Sans', sans-serif;
+$font-mono:     'JetBrains Mono', monospace;
+
+// Type Scale
+$display-lg:   clamp(2.5rem, 6vw, 5rem);
+$display-md:   clamp(2rem, 4vw, 3.5rem);
+$display-sm:   clamp(1.5rem, 3vw, 2.5rem);
+$headline-lg:  clamp(1.25rem, 2.5vw, 2rem);
+$headline-md:  1.5rem;
+$headline-sm:  1.25rem;
+$title-lg:     1.125rem;
+$title-md:     1rem;
+$body-lg:      1rem;
+$body-md:      0.9375rem;
+$body-sm:      0.875rem;
+$label-lg:     0.875rem;
+$label-md:     0.75rem;
+$label-sm:     0.6875rem;
+
+// Spacing
+$space-xs:    4px;
+$space-sm:    8px;
+$space-md:    16px;
+$space-lg:    24px;
+$space-xl:    40px;
+$space-2xl:   64px;
+$space-3xl:   80px;
+$space-4xl:   120px;
+
+// Radii (keep sharp/technical)
+$radius-sm:   2px;
+$radius-md:   4px;
+$radius-lg:   6px;
+
+// Shadows
+$shadow-float: 0px 20px 40px rgba(16, 27, 48, 0.06);
+$shadow-card:  0px 4px 16px rgba(16, 27, 48, 0.04);
+
+// Breakpoints
+$bp-sm:  640px;
+$bp-md:  768px;
+$bp-lg:  1024px;
+$bp-xl:  1280px;

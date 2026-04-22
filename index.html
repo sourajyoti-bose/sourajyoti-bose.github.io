@@ -1,0 +1,177 @@
+---
+layout: home
+title: Home
+---
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- HERO                                                   -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="hero texture-dots">
+  <div class="hero__inner">
+    <div class="hero__content">
+      <div class="hero__status">
+        <span class="hero__status-dot"></span>
+        <span>STATUS: ACTIVE_PROTOCOL</span>
+      </div>
+
+      <h1 class="hero__headline">
+        Secure Data<br>
+        Architecture<br>
+        Through<br>
+        <em>Provable</em> Logic.
+      </h1>
+
+      <p class="hero__subtext">
+        {{ site.description }} Bridging the gap between mathematical theory and infrastructure resilience.
+      </p>
+
+      <div class="hero__cta">
+        <a href="{{ site.baseurl }}/contact/" class="btn btn--primary">
+          Initialize Contact →
+        </a>
+        <a href="{{ site.baseurl }}/research/" class="btn btn--secondary">
+          View Ledger
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__image">
+      <img src="{{ site.baseurl }}/assets/images/portrait.jpg" alt="{{ site.author.name }}" />
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- COMPETENCIES                                           -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="competencies">
+  <div class="competencies__inner">
+    <h2 class="section-label">Core_Competencies</h2>
+
+    <div class="competencies__grid">
+      <div class="comp-card">
+        <svg class="comp-card__icon" viewBox="0 0 24 24">
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+          <line x1="8" y1="21" x2="16" y2="21"></line>
+          <line x1="12" y1="17" x2="12" y2="21"></line>
+        </svg>
+        <h3 class="comp-card__title">Bayesian Inference</h3>
+        <p class="comp-card__desc">Advanced probabilistic modeling for high-variance security environments and threat detection algorithms.</p>
+        <div class="comp-card__tags">
+          <span class="chip">Monte Carlo</span>
+          <span class="chip">R_LANG</span>
+          <span class="chip">Stan</span>
+        </div>
+      </div>
+
+      <div class="comp-card comp-card--featured">
+        <svg class="comp-card__icon" viewBox="0 0 24 24" style="color: rgba(255,255,255,0.5)">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+        <h3 class="comp-card__title">Zero-Knowledge Proofs</h3>
+        <p class="comp-card__desc">Designing privacy-preserving protocols for decentralized identification and secure data computation.</p>
+        <div class="comp-card__tags">
+          <span class="chip">zk-SNARKs</span>
+          <span class="chip">Rust</span>
+          <span class="chip">Elliptic Curve</span>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <svg class="comp-card__icon" viewBox="0 0 24 24">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+        </svg>
+        <h3 class="comp-card__title">IAM Architecture</h3>
+        <p class="comp-card__desc">Infrastructure as Code (IaC) with a focus on granular permissioning and automated policy enforcement.</p>
+        <div class="comp-card__tags">
+          <span class="chip">AWS_IAM</span>
+          <span class="chip">Terraform</span>
+          <span class="chip">Kubernetes</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- RESEARCH LOG                                           -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="research-home">
+  <div class="research-home__inner">
+    <div class="research-home__sidebar">
+      <h2 class="section-label">Research_Log</h2>
+      <p>Peer-reviewed publications and whitepapers focusing on the intersection of cryptography and statistical analysis.</p>
+      <a href="{{ site.baseurl }}/research/" class="research-home__more">
+        Explore Archive
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </a>
+    </div>
+
+    <div class="research-home__list">
+      {% assign research_posts = site.posts | where: "layout", "post" | limit: 4 %}
+      {% if research_posts.size == 0 %}
+        {% assign research_posts = site.posts | limit: 4 %}
+      {% endif %}
+
+      {% for post in research_posts %}
+        <a href="{{ post.url | relative_url }}" class="research-item">
+          <div>
+            <div class="research-item__meta">
+              <span class="research-item__date">{{ post.date | date: "%Y.%m.%d" }}</span>
+              {% if post.category %}
+                <span class="research-item__type">// {{ post.category }}</span>
+              {% else %}
+                <span class="research-item__type">// Research</span>
+              {% endif %}
+            </div>
+            <h3 class="research-item__title">{{ post.title }}</h3>
+            <p class="research-item__desc">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+          </div>
+          <span class="research-item__link">
+            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </span>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- CTA BANNER                                             -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="cta-banner">
+  <div class="cta-banner__inner">
+    <div>
+      <span class="cta-banner__eyebrow">ACTIVE_PROTOCOL</span>
+      <h2 class="cta-banner__headline">Defending the Edge Through Computational Integrity.</h2>
+      <p class="cta-banner__desc">Modern cloud environments require more than firewalls. We implement zero-trust architectures where every packet and every identity is a mathematical certainty, not a variable.</p>
+      <ul class="cta-banner__list">
+        <li>Automated Policy Synthesis</li>
+        <li>Formal Verification of AWS Roles</li>
+        <li>Encrypted Search Orchestration</li>
+      </ul>
+    </div>
+
+    <div class="cta-banner__terminal">
+      <div class="cta-banner__terminal-bar">
+        <span class="cta-banner__terminal-bar-dot"></span>
+        <span class="cta-banner__terminal-bar-dot"></span>
+        <span class="cta-banner__terminal-bar-dot"></span>
+      </div>
+      <div class="cta-banner__terminal-body">
+        <div><span class="t-comment">// RECEIPT_SESSION: ENC_[FFI]</span></div>
+        <div><span class="t-cmd">[INIT] Initializing Secure Session...</span></div>
+        <div><span class="t-cmd">[INFO] Establishing trust_boundary...</span></div>
+        <div><span class="t-cmd">[INFO] Allocating zkProof context...</span></div>
+        <div><span class="t-success">[OK] Hash: FA3d...M8w</span></div>
+        <div><span class="t-cmd">[AUTH] Verifying policy_constraints...</span></div>
+        <div><span class="t-success">[SYNC] Anomaly detection activated.</span></div>
+        <div>&nbsp;<span class="t-cursor"></span></div>
+      </div>
+    </div>
+  </div>
+</section>

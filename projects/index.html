@@ -1,0 +1,47 @@
+---
+layout: default
+title: Projects
+description: Technical projects and implementations.
+permalink: /projects/
+---
+
+<div class="post-list">
+  <div class="post-list__inner">
+    <div class="post-list__header">
+      <h1 class="section-label">Projects</h1>
+      <p style="color: #44474c; max-width: 480px;">
+        Open-source implementations, proof-of-concept systems, and production infrastructure tooling.
+      </p>
+    </div>
+
+    <div class="projects-grid">
+      {% for project in site.projects %}
+        <a href="{{ project.url | relative_url }}" class="project-card">
+          {% if project.image %}
+            <img class="project-card__image" src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+          {% else %}
+            <div class="project-card__image" style="background: #101b30; display:flex; align-items:center; justify-content:center;">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+          {% endif %}
+          <div class="project-card__body">
+            <div class="project-card__meta">
+              {% if project.category %}
+                <span class="chip chip--active">{{ project.category }}</span>
+              {% endif %}
+              {% if project.status %}
+                <span class="chip">{{ project.status }}</span>
+              {% endif %}
+            </div>
+            <h2 class="project-card__title">{{ project.title }}</h2>
+            <p class="project-card__desc">{{ project.description | default: project.excerpt | strip_html | truncate: 180 }}</p>
+          </div>
+        </a>
+      {% else %}
+        <p style="color: #44474c; font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; grid-column: 1/-1;">
+          No projects indexed yet. Check back soon.
+        </p>
+      {% endfor %}
+    </div>
+  </div>
+</div>

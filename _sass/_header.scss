@@ -1,0 +1,243 @@
+// ============================================================
+// HEADER / NAVIGATION
+// ============================================================
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba($surface, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba($outline-variant, 0.15);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $space-xl;
+
+    @media (max-width: $bp-md) {
+      padding: 0 $space-lg;
+    }
+  }
+
+  &__logo {
+    font-family: $font-mono;
+    font-size: $label-lg;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $on-surface;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: $space-xl;
+
+    @media (max-width: $bp-md) {
+      display: none;
+    }
+  }
+
+  &__nav-link {
+    font-family: $font-body;
+    font-size: $label-md;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: $on-surface-variant;
+    transition: color 0.2s;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background: $on-surface;
+      transition: width 0.25s ease;
+    }
+
+    &:hover,
+    &.active {
+      color: $on-surface;
+      opacity: 1;
+
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &.active {
+      color: $on-surface;
+      font-weight: 700;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    gap: $space-md;
+
+    a {
+      color: $on-surface-variant;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        color: $on-surface;
+        opacity: 1;
+      }
+
+      svg {
+        width: 18px;
+        height: 18px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 1.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    }
+  }
+
+  &__mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: $on-surface;
+    padding: $space-sm;
+
+    @media (max-width: $bp-md) {
+      display: flex;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.5;
+    }
+  }
+}
+
+// Mobile nav drawer
+.mobile-nav {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: $surface;
+  z-index: 200;
+  padding: $space-xl;
+  flex-direction: column;
+  gap: $space-lg;
+
+  &.open {
+    display: flex;
+  }
+
+  &__close {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: $space-sm;
+    color: $on-surface;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.5;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: $space-lg;
+    margin-top: $space-2xl;
+
+    a {
+      font-family: $font-display;
+      font-size: $display-sm;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: $on-surface;
+    }
+  }
+}
+
+// ============================================================
+// FOOTER
+// ============================================================
+
+.site-footer {
+  background: $primary-container;
+  color: rgba($on-primary, 0.7);
+  padding: $space-xl 0;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $space-xl;
+
+    @media (max-width: $bp-md) {
+      flex-direction: column;
+      gap: $space-md;
+      padding: 0 $space-lg;
+      text-align: center;
+    }
+  }
+
+  &__logo {
+    font-family: $font-mono;
+    font-size: $label-md;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: rgba($on-primary, 0.9);
+  }
+
+  &__links {
+    display: flex;
+    gap: $space-xl;
+
+    a {
+      font-family: $font-mono;
+      font-size: $label-sm;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba($on-primary, 0.5);
+      transition: color 0.2s;
+
+      &:hover {
+        color: rgba($on-primary, 0.9);
+        opacity: 1;
+      }
+    }
+  }
+
+  &__copy {
+    font-family: $font-mono;
+    font-size: $label-sm;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba($on-primary, 0.4);
+  }
+}

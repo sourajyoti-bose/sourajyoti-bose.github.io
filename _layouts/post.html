@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<article class="post">
+  <header class="post-hero">
+    <div class="post-hero__inner">
+      <a href="{{ site.baseurl }}/research/" class="post-hero__back">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        Research Log
+      </a>
+      <div class="post-hero__meta">
+        <span class="post-hero__date">{{ page.date | date: "%Y.%m.%d" }}</span>
+        {% if page.category %}
+          <span class="post-hero__category">// {{ page.category }}</span>
+        {% endif %}
+        {% if page.volume %}
+          <span class="post-hero__date">VOL_{{ page.volume }}</span>
+        {% endif %}
+      </div>
+      <h1 class="post-hero__title">{{ page.title }}</h1>
+      {% if page.excerpt %}
+        <p class="post-hero__excerpt">{{ page.excerpt | strip_html }}</p>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="post-body">
+    <div class="post-body__inner">
+      {{ content }}
+
+      {% if page.tags %}
+        <div class="post-tags">
+          {% for tag in page.tags %}
+            <span class="chip">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</article>

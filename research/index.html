@@ -1,0 +1,59 @@
+---
+layout: default
+title: Research Log
+description: Peer-reviewed publications and whitepapers.
+permalink: /research/
+---
+
+<div class="post-list">
+  <div class="post-list__inner">
+    <div class="post-list__header">
+      <h1 class="section-label">Research_Log</h1>
+      <p style="color: var(--c-on-surface-variant, #44474c); max-width: 480px;">
+        Peer-reviewed publications, whitepapers, and technical explorations at the intersection of cryptography and statistical analysis.
+      </p>
+    </div>
+
+    <div class="post-list__grid">
+      {% for post in site.posts %}
+        <a href="{{ post.url | relative_url }}" class="post-card">
+          <div>
+            <div class="post-card__meta">
+              <span class="post-card__date">{{ post.date | date: "%Y.%m.%d" }}</span>
+              {% if post.category %}
+                <span class="post-card__category">// {{ post.category }}</span>
+              {% endif %}
+            </div>
+            <h2 class="post-card__title">{{ post.title }}</h2>
+            <p class="post-card__excerpt">{{ post.excerpt | strip_html | truncate: 200 }}</p>
+          </div>
+          <span class="post-card__arrow">
+            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </span>
+        </a>
+      {% else %}
+        <p style="color: #44474c; font-family: 'JetBrains Mono', monospace; font-size: 0.875rem;">
+          No publications indexed yet. Check back soon.
+        </p>
+      {% endfor %}
+    </div>
+
+    {% if paginator.total_pages > 1 %}
+      <div class="pagination">
+        {% if paginator.previous_page %}
+          <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination__link">
+            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            Newer
+          </a>
+        {% endif %}
+        {% if paginator.next_page %}
+          <a href="{{ paginator.next_page_path | relative_url }}" class="pagination__link" style="margin-left: auto;">
+            Older
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+        {% endif %}
+        <span class="pagination__info">{{ paginator.page }} / {{ paginator.total_pages }}</span>
+      </div>
+    {% endif %}
+  </div>
+</div>

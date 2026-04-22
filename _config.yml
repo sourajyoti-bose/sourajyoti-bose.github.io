@@ -1,0 +1,68 @@
+title: "ALGORITHMIC_MONOLITH"
+tagline: "Secure Data Architecture Through Provable Logic."
+description: "Statistician and Cryptographer specializing in high-integrity cloud security and verifiable computational proofs."
+url: ""
+baseurl: ""
+
+# Author
+author:
+  name: "A. Monolith"
+  title: "Statistician & Cryptographer"
+  email: "contact@example.com"
+  github: "username"
+  linkedin: "username"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:year/:month/:day/:title/
+
+# Plugins (GitHub Pages compatible)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+  research:
+    output: true
+    permalink: /research/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+      type: "research"
+    values:
+      layout: "research"
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+
+# Navigation
+nav_links:
+  - title: HOME
+    url: /
+  - title: PROJECTS
+    url: /projects/
+  - title: RESEARCH
+    url: /research/
+  - title: CONTACT
+    url: /contact/
